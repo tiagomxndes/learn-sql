@@ -36,8 +36,6 @@ CID 	NAME 	TYPE 	NOTNULL 	DFLT VALUE 	PK
     Rename the table to users.
     In users, rename the tag column to username.
     In users, add the password (TEXT) column.
-
-
 */CREATE TABLE people(
   id INTEGER,
   tag TEXT,
@@ -56,3 +54,28 @@ CREATE TABLE transactions(
 ALTER TABLE people RENAME TO users;
 ALTER TABLE users RENAME COLUMN tag TO username;
 ALTER TABLE users ADD COLUMN password TEXT;
+/*
+ The transactions table looks like this at the moment:
+cid 	name 	type 	notnull 	dflt_value 	pk
+0 	id 	INTEGER 	0 		0
+1 	recipient_id 	INTEGER 	0 		0
+2 	sender_id 	INTEGER 	0 		0
+3 	note 	TEXT 	0 		0
+4 	amount 	REAL 	0 		0
+
+Complete the following SQL statements in this order:
+
+    Add the BOOLEAN column was_successful to the transactions table.
+    Add the TEXT column transaction_type to the transactions table.
+*/ALTER TABLE transactions ADD COLUMN was_successful BOOLEAN;
+ALTER TABLE transactions ADD COLUMN transaction_type TEXT;
+/*
+ Assignment
+
+Complete the following down migration:
+
+    Drop the was_successful column from the transactions table.
+    Drop the transaction_type column from the transactions table.
+
+ */ALTER TABLE transactions DROP COLUMN was_successful;
+ALTER TABLE transactions DROP COLUMN transaction_type;
