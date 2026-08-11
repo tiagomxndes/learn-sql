@@ -4,4 +4,4 @@ We didn't force any constraints on our tables when we created them, and it has a
 Write a query to SELECT all fields on all records in the transactions table.
 */
 
-SELECT  * FROM  transactions;
+SELECT * FROM transactions;
